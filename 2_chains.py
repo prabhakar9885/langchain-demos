@@ -45,10 +45,11 @@ chain_2 = LLMChain(
 
 chain = SimpleSequentialChain(
     chains=[chain_1,chain_2],
-    verbose=True)
+    verbose=True
+)
 
 if inp:
-    st.write(chain.run(inp))
+    st.write(chain.invoke(inp))
     with st.expander(label='DOB'):
         st.info(body=dob_memory.buffer)
     with st.expander(label='events'):
